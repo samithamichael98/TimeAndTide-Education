@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Cover Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .image-container {
+            width: 1200px;
+            height: 600px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(30, 64, 175, 0.9));
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .subtitle {
+            font-size: 24px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .student-visa { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .university { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .documentation { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .scholarship { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .pre-departure { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .visa-resubmission { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .download-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Service Cover Image Generator</h2>
+        <p>These are placeholder cover images for the service pages. Right-click on each image and "Save As" to download them to the assets/images/ directory.</p>
+        <p><strong>File names:</strong></p>
+        <ul>
+            <li>student-visa-cover.jpg</li>
+            <li>university-cover.jpg</li>
+            <li>documentation-cover.jpg</li>
+            <li>scholarship-cover.jpg</li>
+            <li>pre-departure-cover.jpg</li>
+            <li>visa-resubmission-cover.jpg</li>
+        </ul>
+    </div>
+
+    <div class="download-section">
+        <button onclick="downloadAllImages()">Download All Images (HTML2Canvas)</button>
+        <p><em>Or right-click each image below to save manually</em></p>
+    </div>
+
+    <!-- Student Visa Support -->
+    <div class="image-container student-visa" id="student-visa">
+        <div class="content">
+            <div>Student Visa Support</div>
+            <div class="subtitle">Expert guidance for your visa journey</div>
+        </div>
+    </div>
+
+    <!-- University Placement -->
+    <div class="image-container university" id="university">
+        <div class="content">
+            <div>University Placement</div>
+            <div class="subtitle">Find your perfect academic match</div>
+        </div>
+    </div>
+
+    <!-- Documentation -->
+    <div class="image-container documentation" id="documentation">
+        <div class="content">
+            <div>Documentation Services</div>
+            <div class="subtitle">Professional document preparation</div>
+        </div>
+    </div>
+
+    <!-- Scholarship Support -->
+    <div class="image-container scholarship" id="scholarship">
+        <div class="content">
+            <div>Scholarship Support</div>
+            <div class="subtitle">Unlock funding opportunities</div>
+        </div>
+    </div>
+
+    <!-- Pre-departure Support -->
+    <div class="image-container pre-departure" id="pre-departure">
+        <div class="content">
+            <div>Pre-departure Support</div>
+            <div class="subtitle">Complete journey preparation</div>
+        </div>
+    </div>
+
+    <!-- Visa Resubmission -->
+    <div class="image-container visa-resubmission" id="visa-resubmission">
+        <div class="content">
+            <div>Visa Resubmission</div>
+            <div class="subtitle">Turn rejections into approvals</div>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        async function downloadImage(elementId, filename) {
+            const element = document.getElementById(elementId);
+            const canvas = await html2canvas(element, {
+                backgroundColor: null,
+                scale: 2
+            });
+            
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        async function downloadAllImages() {
+            const images = [
+                { id: 'student-visa', name: 'student-visa-cover.jpg' },
+                { id: 'university', name: 'university-cover.jpg' },
+                { id: 'documentation', name: 'documentation-cover.jpg' },
+                { id: 'scholarship', name: 'scholarship-cover.jpg' },
+                { id: 'pre-departure', name: 'pre-departure-cover.jpg' },
+                { id: 'visa-resubmission', name: 'visa-resubmission-cover.jpg' }
+            ];
+
+            for (const image of images) {
+                await downloadImage(image.id, image.name);
+                // Small delay between downloads
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+            
+            alert('All images downloaded! Please move them to the assets/images/ directory.');
+        }
+    </script>
+</body>
+</html>
