@@ -26,6 +26,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#countries" class="nav-link">Countries</a>
+                <a href="services/success-stories.php" class="nav-link">Voices of Success</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -115,13 +116,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="about-card">
-                        <div class="card-content">
-                            <i class="fas fa-globe-americas"></i>
-                            <h4>Global Reach</h4>
-                            <p>Connecting students to top universities worldwide</p>
-                        </div>
-                    </div>
+                    <img src="assets/images/logo.png" alt="Time & Tide Education">
                 </div>
             </div>
         </div>
@@ -274,7 +269,50 @@
                         <span class="feature-tag">EU Access</span>
                     </div>
                 </div>
-            </div>
+                <div class="country-card">
+                    <div class="country-flag">
+                        <img src="assets/images/NewZealand-flag.png" alt="New Zealand<">
+                    </div>
+                    <h3>New Zealand</h3>
+                    <p>World-class education in a safe, beautiful environment. Globally recognized qualifications and excellent post-study opportunities.</p>
+                    <div class="country-features">
+                        <span class="feature-tag">Affordable</span>
+                        <span class="feature-tag">European Access</span>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">
+                        <img src="assets/images/Korea-flag.png" alt="Korea">
+                    </div>
+                    <h3>Korea</h3>
+                    <p>Tech-focused, world-class education in a vibrant, safe culture. Excellent for careers in technology and global business.</p>
+                    <div class="country-features">
+                    <span class="feature-tag">Affordable</span>
+                    <span class="feature-tag">European Access</span>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">
+                        <img src="assets/images/Hungary-flag.png" alt="Hungary">
+                    </div>
+                    <h3>Hungary</h3>
+                    <p>Rich academic tradition, affordable tuition fees, and gateway to European opportunities.</p>
+                    <div class="country-features">
+                    <span class="feature-tag">Affordable</span>
+                    <span class="feature-tag">European Access</span>
+                    </div>
+                </div>
+                <div class="country-card">
+                     <div class="country-flag">
+                         <img src="assets/images/Malta-flag.png" alt="Malta">
+                     </div>
+                     <h3>Malta</h3>
+                     <p>English-speaking EU island with affordable, high-quality education. Rich history and Mediterranean lifestyle offer a unique study and living experience.</p>
+                     <div class="country-features">
+                     <span class="feature-tag">Affordable</span>
+                     <span class="feature-tag">European Access</span>
+                     </div>
+                 </div>
         </div>
     </section>
 

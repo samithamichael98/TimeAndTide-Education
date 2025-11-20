@@ -1,207 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Placeholder Images</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        .image-generator {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        canvas {
-            border: 1px solid #ddd;
-            margin: 10px;
-        }
-        button {
-            background: #2563eb;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        button:hover {
-            background: #1e40af;
-        }
-        .download-section {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e3f2fd;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-    <h1>Time & Tide Education - Placeholder Image Generator</h1>
-    
-    <div class="image-generator">
-        <h3>Logo Generator</h3>
-        <canvas id="logoCanvas" width="200" height="200"></canvas>
-        <br>
-        <button onclick="generateLogo()">Generate Logo</button>
-        <button onclick="downloadImage('logoCanvas', 'logo.png')">Download Logo</button>
-    </div>
-
-    <div class="image-generator">
-        <h3>Hero Background Generator</h3>
-        <canvas id="heroCanvas" width="800" height="400"></canvas>
-        <br>
-        <button onclick="generateHeroBackground()">Generate Hero Background</button>
-        <button onclick="downloadImage('heroCanvas', 'hero-bg.jpg')">Download Hero Background</button>
-    </div>
-
-    <div class="image-generator">
-        <h3>Flag Generators</h3>
-        <canvas id="ukFlag" width="80" height="80"></canvas>
-        <canvas id="canadaFlag" width="80" height="80"></canvas>
-        <canvas id="australiaFlag" width="80" height="80"></canvas>
-        <canvas id="italyFlag" width="80" height="80"></canvas>
-        <canvas id="latviaFlag" width="80" height="80"></canvas>
-        <br>
-        <button onclick="generateAllFlags()">Generate All Flags</button>
-        <button onclick="downloadAllFlags()">Download All Flags</button>
-    </div>
-
-    <div class="download-section">
-        <h4>Instructions:</h4>
-        <ol>
-            <li>Click "Generate" buttons to create placeholder images</li>
-            <li>Right-click on any image and "Save As" to your assets/images/ folder</li>
-            <li>Or use the download buttons for direct download</li>
-            <li>Upload these to your assets/images/ directory</li>
-        </ol>
-    </div>
-
     <script>
-        function generateLogo() {
-            const canvas = document.getElementById('logoCanvas');
+        for (let i = 1; i <= 10; i++) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 200;
             const ctx = canvas.getContext('2d');
-            
-            // Clear canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Background circle
-            ctx.fillStyle = '#2563eb';
-            ctx.beginPath();
-            ctx.arc(100, 100, 90, 0, 2 * Math.PI);
-            ctx.fill();
-            
-            // Inner circle
-            ctx.fillStyle = '#ffffff';
-            ctx.beginPath();
-            ctx.arc(100, 100, 70, 0, 2 * Math.PI);
-            ctx.fill();
-            
-            // Text
-            ctx.fillStyle = '#2563eb';
-            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.fillStyle = '#333';
+            ctx.font = '20px Arial';
             ctx.textAlign = 'center';
-            ctx.fillText('T&T', 100, 90);
-            
-            ctx.font = '12px Arial';
-            ctx.fillText('Education', 100, 110);
-            
-            // Graduation cap
-            ctx.fillStyle = '#1e40af';
-            ctx.fillRect(85, 45, 30, 20);
-            ctx.fillRect(80, 40, 40, 5);
-        }
-
-        function generateHeroBackground() {
-            const canvas = document.getElementById('heroCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            // Gradient background
-            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#667eea');
-            gradient.addColorStop(0.5, '#764ba2');
-            gradient.addColorStop(1, '#f093fb');
-            
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Add some geometric shapes
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-            
-            // Circles
-            for(let i = 0; i < 10; i++) {
-                ctx.beginPath();
-                ctx.arc(
-                    Math.random() * canvas.width, 
-                    Math.random() * canvas.height, 
-                    Math.random() * 50 + 10, 
-                    0, 2 * Math.PI
-                );
-                ctx.fill();
-            }
-            
-            // Add overlay for text readability
-            const overlay = ctx.createLinearGradient(0, 0, canvas.width, 0);
-            overlay.addColorStop(0, 'rgba(248, 250, 252, 0.9)');
-            overlay.addColorStop(1, 'rgba(226, 232, 240, 0.8)');
-            
-            ctx.fillStyle = overlay;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-
-        function generateFlag(canvasId, colors) {
-            const canvas = document.getElementById(canvasId);
-            const ctx = canvas.getContext('2d');
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Simple striped flag
-            const stripeHeight = canvas.height / colors.length;
-            colors.forEach((color, index) => {
-                ctx.fillStyle = color;
-                ctx.fillRect(0, index * stripeHeight, canvas.width, stripeHeight);
-            });
-            
-            // Add border
-            ctx.strokeStyle = '#ddd';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
-        }
-
-        function generateAllFlags() {
-            generateFlag('ukFlag', ['#012169', '#ffffff', '#C8102E']); // UK colors
-            generateFlag('canadaFlag', ['#ff0000', '#ffffff']); // Canada colors
-            generateFlag('australiaFlag', ['#012169', '#ffffff', '#C8102E']); // Australia colors
-            generateFlag('italyFlag', ['#009246', '#ffffff', '#ce2b37']); // Italy colors
-            generateFlag('latviaFlag', ['#9e3039', '#ffffff', '#9e3039']); // Latvia colors
-        }
-
-        function downloadImage(canvasId, filename) {
-            const canvas = document.getElementById(canvasId);
+            ctx.fillText(`Student ${i}`, 150, 100);
             const link = document.createElement('a');
-            link.download = filename;
-            link.href = canvas.toDataURL();
+            link.download = `student-${i}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg');
             link.click();
         }
-
-        function downloadAllFlags() {
-            downloadImage('ukFlag', 'uk-flag.png');
-            downloadImage('canadaFlag', 'canada-flag.png');
-            downloadImage('australiaFlag', 'australia-flag.png');
-            downloadImage('italyFlag', 'italy-flag.png');
-            downloadImage('latviaFlag', 'latvia-flag.png');
-        }
-
-        // Generate initial images
-        window.onload = function() {
-            generateLogo();
-            generateHeroBackground();
-            generateAllFlags();
-        };
     </script>
 </body>
 </html>

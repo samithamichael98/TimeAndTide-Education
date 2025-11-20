@@ -26,6 +26,7 @@
                 <a href="../index.php#about" class="nav-link">About</a>
                 <a href="../index.php#services" class="nav-link">Services</a>
                 <a href="../index.php#countries" class="nav-link">Countries</a>
+                <a href="success-stories.php" class="nav-link">Voices of Success</a>
                 <a href="../index.php#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">

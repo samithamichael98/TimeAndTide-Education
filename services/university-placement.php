@@ -26,6 +26,7 @@
                 <a href="../index.php#about" class="nav-link">About</a>
                 <a href="../index.php#services" class="nav-link">Services</a>
                 <a href="../index.php#countries" class="nav-link">Countries</a>
+                <a href="success-stories.php" class="nav-link">Voices of Success</a>
                 <a href="../index.php#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -86,7 +87,7 @@
                         Choosing the right university is crucial for your academic and career success. Our university 
                         placement services go beyond just finding any institution - we match you with universities 
                         and programs that align perfectly with your academic background, career goals, budget, and 
-                        personal preferences.Instead of just choosing a university for you,
+                        personal preferences.Instead of justchoosing a university for you,
 we are ready to go beyond it and provide the best
 and most suitable universities and study options that match your knowledge level, skill level, and economic level. With over a thousand of the world's best universities and colleges, we are pleased to inform you that a majority is on our side.
 We help you to prepare resumes, write motivation letters / SOPs, and also host individual mock interviews enabling you to go through admission interviews smoothly.
@@ -183,22 +184,21 @@ We help you to prepare resumes, write motivation letters / SOPs, and also host i
                       
                     </div>
 
-                    <div class="service-countries-card">
+                   <div class="service-countries-card">
                         <h3>Study Destinations</h3>
                         <ul class="countries-list">
                             <li><img src="https://flagcdn.com/h20/gb.png" srcset="https://flagcdn.com/h40/gb.png 2x, https://flagcdn.com/h60/gb.png 3x" alt="United Kingdom"> United Kingdom</li>
                             <li><img src="https://flagcdn.com/h20/ca.png" srcset="https://flagcdn.com/h40/ca.png 2x, https://flagcdn.com/h60/ca.png 3x" alt="Canada"> Canada</li>
                             <li><img src="https://flagcdn.com/h20/au.png" srcset="https://flagcdn.com/h40/au.png 2x, https://flagcdn.com/h60/au.png 3x" alt="Australia"> Australia</li>
-                              <li><img src="https://flagcdn.com/h20/nz.png" srcset="https://flagcdn.com/h40/nz.png 2x, https://flagcdn.com/h60/nz.png 3x" alt="New Zealand"> New Zealand</li>
+                            <li><img src="https://flagcdn.com/h20/nz.png" srcset="https://flagcdn.com/h40/nz.png 2x, https://flagcdn.com/h60/nz.png 3x" alt="New Zealand"> New Zealand</li>
                             <li><img src="https://flagcdn.com/h20/it.png" srcset="https://flagcdn.com/h40/it.png 2x, https://flagcdn.com/h60/it.png 3x" alt="Italy"> Italy</li>
                             <li><img src="https://flagcdn.com/h20/lv.png" srcset="https://flagcdn.com/h40/lv.png 2x, https://flagcdn.com/h60/lv.png 3x" alt="Latvia"> Latvia</li>
-                             <li><img src="https://flagcdn.com/h20/kr.png" srcset="https://flagcdn.com/h40/kr.png 2x, https://flagcdn.com/h60/kr.png 3x" alt="Korea"> Korea</li>
-                              <li><img src="https://flagcdn.com/h20/hu.png" srcset="https://flagcdn.com/h40/hu.png 2x, https://flagcdn.com/h60/hu.png 3x" alt="Hungary"> Hungary</li> 
-                            
-                               <li><img src="https://flagcdn.com/h20/mt.png" srcset="https://flagcdn.com/h40/mt.png 2x, https://flagcdn.com/h60/mt.png 3x" alt="Malta"> Malta</li>
-
+                            <li><img src="https://flagcdn.com/h20/kr.png" srcset="https://flagcdn.com/h40/kr.png 2x, https://flagcdn.com/h60/kr.png 3x" alt="Korea"> Korea</li>
+                            <li><img src="https://flagcdn.com/h20/hu.png" srcset="https://flagcdn.com/h40/hu.png 2x, https://flagcdn.com/h60/hu.png 3x" alt="Hungary"> Hungary</li>
+                            <li><img src="https://flagcdn.com/h20/mt.png" srcset="https://flagcdn.com/h40/mt.png 2x, https://flagcdn.com/h60/mt.png 3x" alt="Malta"> Malta</li>
                         </ul>
                     </div>
+
 
                 </div>
             </div>
