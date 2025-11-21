@@ -1,3 +1,6 @@
+<?php
+require_once "../admin/db_connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,116 +48,30 @@
                 <p class="section-subtitle">Read the stories of students who have achieved their dreams of studying abroad with our help.</p>
             </div>
             <div class="success-stories-grid">
-                <!-- Student 1 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-1.jpg" alt="Student 1">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 1</h3>
-                        <p class="story-country">United Kingdom</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 2 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-2.jpg" alt="Student 2">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 2</h3>
-                        <p class="story-country">Canada</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 3 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-3.jpg" alt="Student 3">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 3</h3>
-                        <p class="story-country">Australia</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 4 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-4.jpg" alt="Student 4">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 4</h3>
-                        <p class="story-country">Italy</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 5 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-5.jpg" alt="Student 5">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 5</h3>
-                        <p class="story-country">Latvia</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 6 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-6.jpg" alt="Student 6">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 6</h3>
-                        <p class="story-country">New Zealand</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 7 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-7.jpg" alt="Student 7">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 7</h3>
-                        <p class="story-country">Korea</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 8 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-8.jpg" alt="Student 8">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 8</h3>
-                        <p class="story-country">Hungary</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 9 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-9.jpg" alt="Student 9">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 9</h3>
-                        <p class="story-country">Malta</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
-                <!-- Student 10 -->
-                <div class="story-card">
-                    <div class="story-image">
-                        <img src="../assets/images/student-10.jpg" alt="Student 10">
-                    </div>
-                    <div class="story-content">
-                        <h3>Student Name 10</h3>
-                        <p class="story-country">United Kingdom</p>
-                        <p>A short description of the student's journey and how Time & Tide Education helped them achieve their goals.</p>
-                    </div>
-                </div>
+                <?php
+                $sql = "SELECT * FROM success_stories ORDER BY created_at DESC";
+                if($result = mysqli_query($link, $sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_array($result)){
+                            echo "<div class='story-card'>";
+                                echo "<div class='story-image'>";
+                                    echo "<img src='../" . htmlspecialchars($row['image_path']) . "' alt='" . htmlspecialchars($row['student_name']) . "'>";
+                                echo "</div>";
+                                echo "<div class='story-content'>";
+                                    echo "<h3>" . htmlspecialchars($row['student_name']) . "</h3>";
+                                    echo "<p class='story-country'>" . htmlspecialchars($row['country']) . "</p>";
+                                    echo "<p>" . htmlspecialchars($row['description']) . "</p>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                        mysqli_free_result($result);
+                    } else{
+                        echo "<p class='lead'><em>No success stories were found.</em></p>";
+                    }
+                } else{
+                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                }
+                ?>
             </div>
         </div>
     </section>

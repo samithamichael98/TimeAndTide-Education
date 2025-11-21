@@ -2476,11 +2476,13 @@ p {
     box-shadow: var(--shadow-light);
     overflow: hidden;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .story-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-large);
+    border-color: var(--primary-color);
 }
 
 .story-image img {
@@ -2502,7 +2504,17 @@ p {
 
 .story-country {
     font-family: var(--font-ui);
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--accent-color);
     margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: inline-block;
+    background: #e0e7ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.story-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
