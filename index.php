@@ -247,7 +247,7 @@
                         <span class="feature-tag">Multicultural</span>
                     </div>
 
-                
+
                 </div>
                 <div class="country-card">
                     <div class="country-flag">
