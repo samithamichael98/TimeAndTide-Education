@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+
 // Configuration
 $config = [
     'admin_email' => 'info@timeandtide.lk',
