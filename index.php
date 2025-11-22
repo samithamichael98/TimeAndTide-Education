@@ -248,7 +248,6 @@
                     </div>
 
 
-
                 </div>
                 <div class="country-card">
                     <div class="country-flag">
