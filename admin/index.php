@@ -57,6 +57,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Admin Login</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .wrapper h2, .wrapper p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper" style="width: 350px; padding: 20px; margin: auto; margin-top: 100px;">

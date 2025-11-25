@@ -27,6 +27,7 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#countries" class="nav-link">Countries</a>
                 <a href="services/success-stories.php" class="nav-link">Voices of Success</a>
+                <a href="services/news.php" class="nav-link">News</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -246,10 +247,6 @@
                         <span class="feature-tag">High Quality</span>
                         <span class="feature-tag">Multicultural</span>
                     </div>
-
-
-
-
                 </div>
                 <div class="country-card">
                     <div class="country-flag">

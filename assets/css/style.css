@@ -1147,12 +1147,12 @@ p {
         font-weight: 700;
         letter-spacing: -0.01em;
     }
-    
+
     .hero-subtitle {
         font-size: 1.125rem;
         line-height: 1.6;
     }
-    
+
     .section-subtitle {
         font-size: 1rem;
         line-height: 1.6;
@@ -1447,7 +1447,7 @@ p {
 }
 .popular-studyarea {
     padding: 0rem 0;
-    
+
 }
 .benefits-grid {
     display: grid;
@@ -2297,13 +2297,13 @@ p {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .cta-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .service-hero-stats {
         gap: 2rem;
     }
@@ -2314,33 +2314,33 @@ p {
         height: 60vh;
         min-height: 500px;
     }
-    
+
     .service-hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .service-hero-description {
         font-size: 1.125rem;
     }
-    
+
     .service-hero-stats {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
     }
-    
+
     .hero-stat-item .stat-number {
         font-size: 2rem;
     }
-    
+
     .service-main h2 {
         font-size: 2rem;
     }
-    
+
     .service-main h3 {
         font-size: 1.5rem;
     }
-    
+
     .benefits-grid,
     .documents-grid,
     .scholarships-grid,
@@ -2351,12 +2351,12 @@ p {
     .guidelines-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .study-areas-grid,
     .checklist-categories {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-actions {
         flex-direction: column;
         align-items: center;
@@ -2367,19 +2367,19 @@ p {
     .service-hero-text h1 {
         font-size: 2rem;
     }
-    
+
     .service-hero-description {
         font-size: 1rem;
     }
-    
+
     .service-hero-stats {
         gap: 1rem;
     }
-    
+
     .hero-stat-item .stat-number {
         font-size: 1.75rem;
     }
-    
+
     .service-details,
     .service-process,
     .scholarship-tips,
@@ -2460,7 +2460,7 @@ p {
 }
 
 /* Success Stories Section */
-.success-stories {
+.success-stories, .news {
     padding: 8rem 0;
 }
 
@@ -2487,8 +2487,7 @@ p {
 
 .story-image img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
 }
 
 .story-content {
@@ -2517,4 +2516,111 @@ p {
 .story-content p {
     font-size: 1.05rem;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .story-image img {
+        height: auto;
+    }
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* One column per row */
+    gap: 2.5rem;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    border: 2px solid #007bff; /* Blue border */
+}
+
+/* LEFT SIDE – IMAGE AREA */
+.news-card .swiper-container {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 1 / 1;   /* ensures perfect fit for your square images */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.news-card .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* fills the box nicely */
+}
+
+/* RIGHT SIDE – TEXT */
+.news-content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-content h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.news-content p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* RESPONSIVE (mobile) */
+@media (max-width: 768px) {
+    .news-card {
+        flex-direction: column;
+    }
+    .news-card .swiper-container,
+    .news-content {
+        width: 100%;
+    }
+}
+
+.news-date {
+    margin-top: auto;
+    font-style: italic;
+}
+
+.news-content h3 {
+    font-size: 30px;  /* increase the size */
+    font-weight: 800;   /* make it bold if needed */
+    margin-bottom: 40px;
+}
+
+.news-card .swiper-container {
+    width: 45%;          /* or 100% on mobile */
+    aspect-ratio: 1 / 1; /* square */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.news-card .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-card:hover {
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .news-card .swiper-container {
+        width: 100%;
+        aspect-ratio: auto; /* adjust to image height */
+        margin-bottom: 1rem;
+    }
 }
